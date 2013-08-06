@@ -9,7 +9,7 @@
 import RPi.GPIO as GPIO
 import time
 GPIO.setup(11, GPIO.OUT)
-while True:
+for i in range(10):
     GPIO.output(11, True)
     time.sleep(2)
     GPIO.output(11, False)
