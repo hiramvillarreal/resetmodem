@@ -1,5 +1,5 @@
 import urllib2
-
+import gpiooutput
 
 def cknet():
     print "Testing for internet connectivity"
@@ -8,6 +8,7 @@ def cknet():
         print "Successfully opened URL"
     except urllib2.URLError as err:
         print "We have no connection"
+        gpiooutput.toggle()
         pass
 
 if __name__ == "__main__":
