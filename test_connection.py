@@ -4,7 +4,7 @@ import sys
 def cknet():
     print "Testing for internet connectivity"
     try:
-        response=urllib2.urlopen("http://google.com")
+        response=urllib2.urlopen("http://www.msftncsi.com/ncsi.txt")
         print "Successfully opened URL"
         return 0
     except urllib2.URLError as err:
