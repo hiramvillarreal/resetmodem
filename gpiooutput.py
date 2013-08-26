@@ -14,11 +14,13 @@ import time
 def toggle():    
 
     GPIO.setup(11, GPIO.OUT)
-    for i in range(10):
+    for i in range(1):
         GPIO.output(11, True)
-        time.sleep(2)
+        time.sleep(15)
         GPIO.output(11, False)
-        time. sleep(2)
-    
+        time.sleep(240)
+
+
+           
 if __name__ == "__main__":
     toggle()
