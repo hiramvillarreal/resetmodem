@@ -1,14 +1,14 @@
 import urllib2
 import gpiooutput
 import sys
-
+import os
 
 retries = 1
 
 def cknet():
     global retries
     debug = 0
-    fake_status = 1
+    fake_status = 0
 
     print "Testing for internet connectivity"
 
@@ -45,11 +45,11 @@ if __name__ == "__main__":
             print "Success"
             if send_email == 1:
                 print "Detect previous failure, send email with log"
+                os.system('cat example.log | mail -s "sending contents of modemflap.log" efrain.olivares@gmail.com jdhmd@cox.net')
             break
 
         else:
             print "Failed to find connection, Retrying"    
             send_email = 1
 
-#    if send_email == 1:
-#        print "We would have command to send email here"
+
