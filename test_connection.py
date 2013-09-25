@@ -2,7 +2,9 @@ import urllib2
 import gpiooutput
 import sys
 import os
+import logging
 
+logging.basicConfig(filename='example.log', level=logging.DEBUG)
 retries = 1
 
 def cknet():
@@ -11,6 +13,7 @@ def cknet():
     fake_status = 0
 
     print "Testing for internet connectivity"
+    logging.debug('Testing for internet connectivity')
 
     # debugging vv
     if debug == 1:
