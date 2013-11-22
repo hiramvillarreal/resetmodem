@@ -52,7 +52,7 @@ if __name__ == "__main__":
             print_debug( "Connected" )
             if send_email == 1:
                 print_debug( "Detect previous failure, send email with log" )
-                os.system('cat example.log | mail -s "sending contents of modemflap.log" efrain.olivares@gmail.com jdhmd@cox.net')
+                os.system('tail -n 20 example.log | mail -s "sending contents of modemflap.log" efrain.olivares@gmail.com jdhmd@cox.net')
                 os.system('mv example.log example.log.bak')
             break
 
