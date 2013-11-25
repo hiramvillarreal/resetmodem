@@ -8,7 +8,7 @@ import datetime
 logging.basicConfig(filename='example.log', level=logging.DEBUG)
 retries = 1
 
-def cknet():
+def check_internet():
     """Check Internet Connection
     
     This function is called to probe for an internet connection.  It uses a try/except 
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     send_email = 0
 
     for i in range(3):
-        status = cknet()
+        status = check_internet()
         if status == 0:
             print_debug( "Connected" )
             if send_email == 1:
