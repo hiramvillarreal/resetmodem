@@ -8,18 +8,15 @@
 import RPi.GPIO as GPIO
 import time
 
-
-
-def toggle():    
-
+def toggle():   
+    GPIO.setmode(GPIO.BOARD) 
     GPIO.setup(11, GPIO.OUT) 		# Selects GPIO pin 11 on RPi
     for i in range(1):
-        GPIO.output(11, True)           # Pin 11 goes high, opening a NC relay and cutting power to modem
+        GPIO.output(11, False)           # Pin 11 goes high, opening a NC relay and cutting power to modem
         time.sleep(15)                  # Keeps power off for 15 sec to allow modem to "die"
-        GPIO.output(11, False)          # Pin 11 goes low to re-power the modem
-        time.sleep(240)                 # 4 minute delay to allow modem to re-establish connection to Cox DOCSIS
-
-
+        GPIO.output(11, True)          # Pin 11 goes low to re-power the modem
+        GPIO.cleanup() 
+        time.sleep(240) 
            
 if __name__ == "__main__":
     toggle()
