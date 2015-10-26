@@ -47,7 +47,9 @@ You can set this up on an interval using cron.
 ```
 $crontab -e
 Youll see an aditor come up.  At the end of this file add the following line
-*/15 * * * * <path to your test_connection file>  >/dev/null 2>&3
+*/15 * * * * sudo /usr/bin/python /home/pi/rpi/test_connection.py
+
+
 ```
 
 The notation ahead of the script path/name has 5 componentes.  minutes, hours, days, weeks, months.  * means every, and */15 mean every 15 on the hour, or 0, 15, 30, 45.  You can change to every to simpley by changing the first entry to */10.
